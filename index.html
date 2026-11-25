@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>오목</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="start-screen" class="panel">
+    <h1>오목</h1>
+    <form id="start-form">
+      <fieldset>
+        <legend>게임 모드</legend>
+        <div class="choices">
+          <label><input type="radio" name="mode" value="human" checked><span>사람 대 사람</span></label>
+          <label><input type="radio" name="mode" value="ai"><span>사람 대 AI</span></label>
+        </div>
+      </fieldset>
+      <fieldset id="level-field" hidden>
+        <legend>AI 수준</legend>
+        <div class="choices">
+          <label><input type="radio" name="level" value="1"><span>1</span></label>
+          <label><input type="radio" name="level" value="2"><span>2</span></label>
+          <label><input type="radio" name="level" value="3" checked><span>3</span></label>
+          <label><input type="radio" name="level" value="4"><span>4</span></label>
+          <label><input type="radio" name="level" value="5"><span>5</span></label>
+        </div>
+        <p class="hint">숫자가 클수록 잘 둡니다. 플레이어가 흑으로 먼저 둡니다.</p>
+      </fieldset>
+      <button type="submit" class="primary">게임 시작</button>
+    </form>
+  </main>
+
+  <main id="game-screen" hidden>
+    <p id="mode-label"></p>
+    <p id="status" role="status"></p>
+    <canvas id="board" aria-label="오목판"></canvas>
+    <div class="actions">
+      <button type="button" id="restart" class="primary">새 게임</button>
+      <button type="button" id="to-menu">처음으로</button>
+    </div>
+  </main>
+
+  <script src="js/game.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>
